@@ -93,8 +93,7 @@
   </view>
 
   <view class="detail">
-    <import src="/lib/wxParse/wxParse.wxml" />
-    <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+    <towxml nodes="{{goodsDetail}}"/>
   </view>
 
   <view class="common-problem">

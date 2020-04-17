@@ -652,7 +652,6 @@
   text-align: center;
   color: #fff;
 }
-@import "../../lib/wxParse/wxParse.wxss";
 
 .attr-pop-box {
   width: 100%;

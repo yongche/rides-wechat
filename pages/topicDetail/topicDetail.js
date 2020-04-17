@@ -1,5 +1,4 @@
 var app = getApp();
-var WxParse = require('../../lib/wxParse/wxParse.js');
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
 
@@ -10,7 +9,8 @@ Page({
     topicList: [],
     commentCount: 0,
     commentList: [],
-    topicGoods: []
+    topicGoods: [],
+    topicDetail: ''
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -28,7 +28,20 @@ Page({
           topicGoods: res.data.goods
         });
 
-        WxParse.wxParse('topicDetail', 'html', res.data.topic.content, that);
+        let obj = app.towxml(res.data.topic.content, 'html',{
+          // theme:'dark',
+          events:{
+            tap:e => {
+              console.log('tap', e);
+            },
+            change:e => {
+              console.log('todo', e);
+            }
+          }
+        });
+        that.setData({
+          topicDetail: obj
+        });
       }
     });
 

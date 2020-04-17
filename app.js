@@ -18,6 +18,7 @@ App({
       })
     })
   },
+  towxml:require('./towxml/index'),
   onShow: function(options) {
     user.checkLogin().then(res => {
       this.globalData.hasLogin = true;

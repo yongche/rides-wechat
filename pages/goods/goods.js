@@ -1,5 +1,4 @@
 var app = getApp();
-var WxParse = require('../../lib/wxParse/wxParse.js');
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
 var user = require('../../utils/user.js');
@@ -15,6 +14,7 @@ Page({
     issueList: [],
     comment: [],
     brand: {},
+    goodsDetail: '',
     specificationList: [],
     productList: [],
     relatedGoods: [],
@@ -194,8 +194,20 @@ Page({
             collect: false
           });
         }
-
-        WxParse.wxParse('goodsDetail', 'html', res.data.info.detail, that);
+        let obj = app.towxml(res.data.info.detail, 'html',{
+          // theme:'dark',
+          events:{
+            tap:e => {
+              console.log('tap', e);
+            },
+            change:e => {
+              console.log('todo', e);
+            }
+          }
+        });
+        that.setData({
+          goodsDetail: obj
+        });
         //获取推荐商品
         that.getGoodsRelated();
       }
