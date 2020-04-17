@@ -547,6 +547,7 @@ Page({
 
   //添加到购物车
   addToCart: function() {
+    console.log("addToCart");
     var that = this;
     if (this.data.openAttr == false) {
       //打开规格选择窗口
