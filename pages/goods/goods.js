@@ -435,6 +435,7 @@ Page({
     let that = this;
     wx.getSetting({
         success: function (res) {
+            console.log("authSetting")
             console.log(res)
             //不存在相册授权
             if (!res.authSetting['scope.writePhotosAlbum']) {

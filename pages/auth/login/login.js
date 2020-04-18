@@ -26,7 +26,7 @@ Page({
   wxLogin: function(e) {
     if (e.detail.userInfo == undefined) {
       app.globalData.hasLogin = false;
-      util.showErrorToast('微信登录失败');
+      util.showErrorToast('微信登录失败[1]');
       return;
     }
 
@@ -40,7 +40,7 @@ Page({
         })
       }).catch((err) => {
         app.globalData.hasLogin = false;
-        util.showErrorToast('微信登录失败');
+        util.showErrorToast('微信登录失败[2]');
       });
 
     });
