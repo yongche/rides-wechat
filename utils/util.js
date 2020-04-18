@@ -33,9 +33,7 @@ function request(url, data = {}, method = "GET") {
         'X-Yopsaas-Token': wx.getStorageSync('token')
       },
       success: function(res) {
-
         if (res.statusCode == 200) {
-
           if (res.data.errno == 501) {
             // 清除登录相关内容
             try {
@@ -54,7 +52,6 @@ function request(url, data = {}, method = "GET") {
         } else {
           reject(res.errMsg);
         }
-
       },
       fail: function(err) {
         reject(err)
@@ -64,7 +61,6 @@ function request(url, data = {}, method = "GET") {
 }
 
 function redirect(url) {
-
   //判断页面是否需要登录
   if (false) {
     wx.redirectTo({
