@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "custom-button": "../../../components/button/button",
+    "done-window": "../../../components/cancelOrder/done-window/done-window",
+    "start-end": "../../../components/start-end/start-end"
+  }
+}

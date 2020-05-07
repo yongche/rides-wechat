@@ -1,0 +1,28 @@
+.view-box{
+    padding: 30rpx 24rpx 0 24rpx;
+}
+.cancel-rule{
+    margin-top: 45rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cancel-rule text{
+    font-size: 13px;
+    color: #0A7DE6;
+    margin-left: 8rpx;
+    vertical-align: bottom;
+}
+.yongche-button{
+    background: #FFFFFF;
+    border: 1px solid #C8C8C8;
+    border-radius: 8rpx;
+    color: #646464;
+    position: absolute;
+    bottom: 23rpx;
+    width:702rpx;
+    height: 88rpx;
+}
+.done-window{
+    margin-top: 32rpx;
+}

@@ -45,6 +45,30 @@
   <view class='separate'></view>
 
   <view class='user_row'>
+    <view class='user_row_left'>网约车订单</view>
+  </view>
+  <view class='user_column'>
+    <view class='user_column_item2' bindtap='goRideOrderIndex' data-index='1' data-route='/pages/yongche/myJourney/myJourney'>
+      <text class="user_column_item_badge" wx:if="{{rideorder.unpaid != 0}}">{{rideorder.unpaid}}</text>
+      <image class='user_column_item_image' src='/static/images/pendpay.png'>
+      </image>
+      <view class='user_column_item_text'>待付款</view>
+    </view>
+    <view class='user_column_item2' bindtap='goRideOrderIndex' data-index='2' data-route='/pages/yongche/myJourney/myJourney'>
+      <text class="user_column_item_badge" wx:if="{{rideorder.currentTrip != 0}}">{{rideorder.currentTrip}}</text>
+      <image class='user_column_item_image' src='/images/order_gray.png'></image>
+      <view class='user_column_item_text'>当前行程</view>
+    </view>
+    <view class='user_column_item2' bindtap='goRideOrderIndex' data-index='3' data-route='/pages/yongche/myJourney/myJourney'>
+      <text class="user_column_item_badge" wx:if="{{rideorder.historyTrip != 0}}">{{rideorder.historyTrip}}</text>
+      <image class='user_column_item_image' src='/static/images/footprint.png'></image>
+      <view class='user_column_item_text'>历史行程</view>
+    </view>
+  </view>
+
+  <view class='separate'></view>
+
+  <view class='user_row'>
     <view class='user_row_left'>核心服务</view>
   </view>
   <view class='user_column'>
@@ -78,7 +102,7 @@
   </view>
   <view class='user_column'>
 
-    <button class="user_column_item_phone" open-type="getPhoneNumber" bindgetphonenumber="bindPhoneNumber">
+    <button class="user_column_item_phone" open-type="getPhoneNumber" bindgetphonenumber="bindPhoneNumber" wx:if="{{phoneBtnShow}}">
       <image class='user_column_item_image' src='/static/images/mobile.png'></image>
       <view class='user_column_item_text'>绑定手机</view>
     </button>

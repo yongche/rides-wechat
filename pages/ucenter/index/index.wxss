@@ -105,6 +105,14 @@ page {
   position: relative;
 }
 
+.user_column_item2 {
+  width: 35%;
+  height: 140rpx;
+  background: #fff;
+  text-align: center;
+  position: relative;
+}
+
 .user_column_item_badge {
   height: 28rpx;
   width: 28rpx;

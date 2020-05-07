@@ -1,0 +1,8 @@
+<!--有责取消，有免责机会展示组件-->
+<view class="custom-class">
+    <view class="info-window">
+        <image src="../../../images/free_chance.png" style="width: 220rpx;height:220rpx"></image>
+        <text>您取消行程时间过晚，需支付取消费，但本次可免费取消。请谨慎操作，以免多次取消产生扣款</text>
+    </view>
+</view>
+

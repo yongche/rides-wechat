@@ -1,0 +1,11 @@
+<!--components/search_result_list/list.wxml-->
+<view class="search_list_container" bindtap="click">
+    <view class="location_box">
+        <image class="location" src="../../images/location.png"></image>
+    </view>
+    <view class="address_info">
+        <text class="address_title">{{address_title}}</text>
+        <text class="address_detail_tips">{{address_detail_tips}}</text>
+    </view>
+    <view class="diy_line_address"></view>
+</view>

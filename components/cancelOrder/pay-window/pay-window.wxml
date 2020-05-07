@@ -1,0 +1,10 @@
+<!--有责取消，需支付金额展示组件-->
+<view class="custom-class">
+    <view class="info-window">
+        <view class="info-text">您取消行程时间过晚，需支付取消费</view>
+        <view>
+            <text class="count">{{payCount}}</text>
+            <text>元</text>
+        </view>
+    </view>
+</view>

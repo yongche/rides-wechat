@@ -1,0 +1,32 @@
+<!-- 地址搜索 -->
+<view class="searchContainer">
+  <view class="inputBox">
+    <view class="city_selected_box" bindtap="select_city">
+        <text class="city_selected">{{city_selected}}</text>
+        <image class="triangel" src="../../../images/triangle_icon.png"></image>
+    </view>
+    <view class="input_cpn">
+      <image class="search_icon" src="../../../images/search_address.png"></image>
+      <input class="inputClass" type="text" focus bindinput="inputChange" value="{{inputValue}}" placeholder-class="placeholer_css" placeholder="{{flag == 1 ? '请输入上车地点' : '请输入下车地点'}}" />
+    </view>
+    <view class="clear_icon_box" bindtap="clearInput" wx:if="{{show_clear}}">
+        <image class="clear_icon" src="../../../images/clear_icon.png"></image>
+    </view>
+    <view class="diy_line"></view>
+  </view>
+  <!-- 没有搜索结果 -->
+  <block wx:if="{{search_null}}">
+    <view class="search_null">
+      <view class="search_null_top_box">
+        <view class="text_ellipsis font34">在{{city_selected}}没有搜索到"{{search_null_content}}</view>
+        <text class="yinhao_right">"</text>
+      </view>
+      <text class="font30">请尝试其他搜索词或者确认所在城市</text>
+    </view>
+  </block>
+  <!-- 搜索结果列表 -->
+  <!-- <List wx:for="" data-address="{{}}" address_title="" address_detail_tips="" /> -->
+  <block wx:for="{{result}}" wx:for-item="item" wx:key="{{index}}"> 
+    <List data-index="{{index}}" bind:address="chooseAddress" address_title="{{item.name}}" address_detail_tips="{{item.address}}" />
+  </block>
+</view>

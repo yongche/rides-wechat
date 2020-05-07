@@ -1,0 +1,53 @@
+<view wx:if="{{couponCount==0}}" class="no-coupon">
+    <image src="../../images/no_coupon_placeholder.png"></image>
+    <text>您还没有优惠券</text>
+</view>
+<view class="container-view" wx:else>
+    <view class="tips-text">共 {{couponCount}} 张  可节约 {{couponAmount||0}} 元</view>
+    <block wx:for="{{couponList}}" wx:key="index">
+        <view class="coupon-usual" wx:if="{{!item.prompt}}">
+            <view class="money-view border-right">
+                <block wx:if="{{item.coupon_type=='3'||item.coupon_type=='31'||item.coupon_type=='32'}}">
+                    <text class="coupon-value">{{item.facevalue/10}}</text>
+                    <view class="unit">折</view>
+                </block>
+                <block wx:else>
+                    <text class="coupon-value">{{item.facevalue}}</text>
+                    <view class="unit">元</view>
+                </block>
+            </view>
+            <view class="coupon-detail">
+                <text class="coupon-content">{{item.coupon_name}}</text>
+                <text class="coupon-duration">{{item.valid_date}}</text>
+            </view>
+        </view>
+        <view class="limited-box" wx:else>
+            <view class="coupon-limited">
+                <view class="money-view border-right">
+                    <block wx:if="{{item.coupon_type=='3'||item.coupon_type=='31'||item.coupon_type=='32'}}">
+                        <text class="coupon-value">{{item.facevalue/10}}</text>
+                        <view class="unit">折</view>
+                    </block>
+                    <block wx:else>
+                        <text class="coupon-value">{{item.facevalue}}</text>
+                        <view class="unit">元</view>
+                    </block>
+                </view>
+                <view class="coupon-detail">
+                    <text class="coupon-content">{{item.coupon_name}}</text>
+                    <text class="coupon-duration">{{item.valid_date}}</text>
+                </view>
+            </view>
+            <view class="middle-box">
+                <view class="left-circle">
+                    <image src="../../images/bg_circle_left.png"></image>
+                </view>
+                <view class="middle-line"></view>
+                <view class="right-circle">
+                    <image src="../../images/bg_circle_right.png"></image>
+                </view>
+            </view>
+            <view class="use-condition">{{item.prompt}}</view>
+        </view>
+    </block>
+</view>

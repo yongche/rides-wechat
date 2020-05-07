@@ -1,0 +1,15 @@
+{
+    "usingComponents": {
+      "block-item": "../../../components/my-journey/block-item/index",
+      "Btn": "../../../components/button/button",
+      "driver-state": "/components/driver-state/state",
+      "travel-state": "/components/travel-state/state",
+      "travel_cost_detail": "/components/travel_cost_detail/travel_cost_detail",
+      "reassign-detail": "../../../components/reassignDetail/index",
+      "pay-done": "../../../components/pay-done/index",
+      "i-action-sheet": "../../../iview/action-sheet/index",
+      "select-coupon": "../../../components/select-coupon/select-coupon",
+      "Modal": "../../../components/modal/modal",
+      "coupon-item":"/components/coupon-item/coupon-item"
+    }
+  }

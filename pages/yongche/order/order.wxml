@@ -1,0 +1,92 @@
+<view class="yongche_container" catchtouchmove='catchtouchmove'>
+  <!-- 如果当前城市已开通叫车服务 -->
+  <block wx:if="{{servering_city}}">
+    <view class='topContainer'>
+      <address-list icon_color="28D79B" data-flag="1" bind:clickevent="chooseAddress" rightText="{{startAddress}}"
+        leftText="出发地" rightDefault="{{rightDefault}}" rightActive="{{rightActive1}}" />
+      <view class="diy_line"></view>
+      <address-list icon_color="AB956D" data-flag="2" bind:clickevent="chooseAddress" rightText="{{endAddress}}"
+        leftText="目的地" rightDefault="{{rightDefault}}" rightActive="{{rightActive2}}" />
+      <view class="diy_line diy_line_2"></view>
+      <address-list icon_color="888888" rightActive="rightActive" bind:clickevent="carChange" leftText="车型" rightText="{{carTypeItem}}" />
+      <view class="diy_line_3"></view>
+    </view>
+    <view class="bookingTips {{bookingCar_ready==true ? bookingReady : 'bookingNotReady'}}">
+      <!-- 网络错误 -->
+      <block wx:if="{{network_error}}">
+        <view class="no_network_box" bindtap="estimatePrice">
+          <image class="no_network" src="../../../images/no_network.png"></image>
+          <text class="no_network_tips">网络不给力，点击尝试重新加载</text>
+        </view>
+      </block>
+      <!-- 预估成功 -->
+      <block wx:elif="{{bookingCar_ready&&(!estimate_fail)&&(!network_error)}}">
+        <view class="estimate_css">
+        <text>预估 </text><text class="estimate_money">{{estimate_money}}</text><text> 元</text>
+         <view class="discount-info">{{discountInfo}}</view>
+        </view>
+      </block>
+      <!-- 未输入起始地点 -->
+      <block wx:elif="{{!bookingCar_ready && !estimate_fail && !network_error}}">
+        <text>输入下车地点，可预估行程费用</text>
+      </block>
+      <!-- 预估失败 -->
+      <block wx:elif="estimate_fail">
+        <view class="warning_box" bindtap="estimatePrice">
+          <image class="warning" src="../../../images/warning.png"></image>
+          <text class="warning_tips">预估价格失败，点击尝试重新加载</text>
+        </view>
+      </block>
+    </view>
+    <Btn my-class="bookingCar {{bookingCar_ready==false ? 'bookingCarNot' : 'bookingCarNow' }}" content="{{bookingCarBtnTips}}"
+      bind:myevent="bookingCar" />
+  </block>
+  <!-- 正在行程中 modal -->
+  <Modal show="{{showTravelling}}">
+    <view class="traveling" bindtap="goTraveling">
+      <text class="traveling_title fontbold">{{orderStatusTip}}</text>
+      <!-- <text class="traveling_tips">{{travelingContent}}</text> -->
+      <text class="traveling_car_type">{{travelling_result.order.carBrand}}({{travelling_result.order.carColor}})</text>
+      <text class="traveling_plate_number">{{travelling_result.order.vehicleNumber}}</text>
+      <image class="traveling_img" src="{{travelling_result.driver.photo}}">
+
+      </image>
+    </view>
+  </Modal>
+  <!-- 优惠券大礼包 -->
+  <Modal show="{{showCouponGifts}}">
+    <view>
+        <view class='giftsBox'>
+            <scroll-view class='giftsTop' scroll-y>
+                <coupon-item
+                  wx:for="{{couponList}}"
+                  wx:for-item="item"
+                  wx:for-index="idx"
+                  wx:key="item.coupon_id"
+                  facevalue="{{item.facevalue}}"
+                  coupon_name="{{item.coupon_name}}"
+                  coupon_effective="{{item.effective}}"
+                  prompt="{{item.prompt}}"
+                    ></coupon-item>
+                <view class="bottom-empty-space">
+                  
+                </view>
+            </scroll-view>
+            <view class='giftsBottom'>
+              <image class="coupon-image" src="{{giftsImage}}">
+                
+              </image>
+            </view>
+          </view>
+      <view class='gifts_close_box' bindtap="closeGifts">
+        <image class='gifts_close' src='../../../images/gifts_close.png'></image>
+      </view>
+    </view>
+  </Modal>
+  <!-- <view class="weui-loadmore weui-loadmore_line">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view> -->
+  <i-action-sheet visible="{{ action_sheet_visible }}" actions="{{carTypeName}}" show-cancel bind:cancel="cancelActionSheet"
+    bind:click="clickActionSheet" />
+  <i-toast id="toast" />
+</view>

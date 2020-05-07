@@ -1,0 +1,73 @@
+<!-- 费用明细 pages/yongche/cost_detail/cost_detail.wxml-->
+<wxs src="../../../common/filter.wxs" module="filter" />
+<view class="cost_detail_container">
+    <view class="time_info">
+        <view class="use_time fontbold">用车时间:</view>
+        <view class="use_time_tips_box">
+            <text class="use_time fontbold">{{use_car_time}}</text>
+            <text class="use_time_tips">行驶10公里,用时1小时10分钟</text>
+        </view>
+    </view>
+    <!-- 列表循环 -->
+    <view class="margin_top_20" wx:for="{{result.feeSnap.details}}" wx:key="detail" wx:for-index="idx" wx:for-item="item">
+        <!-- Title -->
+        <view class="commonFlex height_40 fontbold">
+            <view>
+                <text class="font28">{{item.title}}</text>
+                <text wx:if="{{item.subTitle}}" class="font24 margin_left_20 sub-title">{{item.subTitle}}</text>
+            </view>
+            <text class="font28">{{item.fee}}{{item.unit}}</text>
+        </view>
+        <!-- segments -->
+        <block wx:if="{{item.segments}}">
+            <view wx:for="{{item.segments}}" wx:for-index="segments_index" wx:key="segments" wx:for-item="segments_item"
+                class="segments_item commonFlex height_33 margin_top_5">
+                <text class="font24">{{segments_item.title}}　{{segments_item.subTitle}}</text>
+                <text class="font24">{{segments_item.fee}}{{segments_item.unit}}</text>
+            </view>
+        </block>
+    </view>
+    <!-- combo -->
+    <view class="margin_top_20" wx:for="{{result.feeSnap.combo}}" wx:key="combo" wx:for-index="idx" wx:for-item="item">
+            <!-- Title -->
+            <view class="commonFlex height_40 fontbold">
+                <view>
+                    <text class="font28">{{item.title}}</text>
+                    <text wx:if="{{item.subTitle}}" data-title="{{item.title}}"  data-suburl="{{item.subTitleUrl}}" bindtap="clickSubTitle" class="font24 margin_left_20"><text>(</text><text class="">{{filter.sliceHeadEnd(item.subTitle)}}</text><text>)</text></text>
+                </view>
+                <text class="font28">{{item.fee}}{{item.unit}}</text>
+            </view>
+        </view>
+    <!-- 上付费用 -->
+    <view class="margin_top_20" wx:for="{{result.feeSnap.addPrice}}" wx:key="addprice" wx:for-index="idx" wx:for-item="item">
+        <!-- Title -->
+        <view class="commonFlex height_40 fontbold">
+            <view>
+                <text class="font28">{{item.title}}</text>
+                <text wx:if="{{item.subTitle}}" data-title="{{item.title}}"  data-suburl="{{item.subTitleUrl}}" bindtap="clickSubTitle" class="font24 margin_left_20"><text>(</text><text class="detail_tips">{{filter.sliceHeadEnd(item.subTitle)}}</text><text>)</text></text>
+            </view>
+            <text class="font28">{{item.fee}}{{item.unit}}</text>
+        </view>
+    </view>
+    <!-- discount 优惠 -->
+    <block wx:if="{{result.feeSnap.discount}}">
+        <view wx:for="{{result.feeSnap.discount}}" wx:key="discount" wx:for-index="idx" wx:for-item="item" class="height_40 margin_top_20 commonFlex fontbold">
+            <view>
+                <text class="font28">{{item.title}}</text>
+                <text wx:if="{{item.subTitle}}" class="font24 margin_left_20">{{item.subTitle}}</text>
+            </view>
+            <text class="font28_red">{{item.fee}}{{item.unit}}</text>
+        </view>
+    </block>
+    <view class="cut_off_line"></view>
+    <view class="pay_finish">
+        <view>
+            <text class="font24_black">{{result.feeSnap.realPay[0].title}}</text>
+            <text class="payed_money fontbold">{{result.feeSnap.realPay[0].fee}}</text>
+            <text class="font24_black">{{result.feeSnap.realPay[0].unit}}</text>
+        </view>
+    </view>
+    <view class="detail_billing" bindtap="detail_billing">
+        <text class="detail_tips">详细计费说明></text>
+    </view>
+</view>

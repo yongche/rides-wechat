@@ -15,6 +15,12 @@ Page({
       unrecv: 0,
       uncomment: 0
     },
+    rideorder: {
+      unpaid: 0,
+      currentTrip: 0,
+      historyTrip: 0
+    },
+    phoneBtnShow: true,
     hasLogin: false
   },
   onLoad: function(options) {
@@ -25,8 +31,23 @@ Page({
   },
   onShow: function() {
     //获取用户的登录信息
-    if (app.globalData.hasLogin) {
+    let hasLogin = wx.getStorageSync('hasLogin');
+    if (app.globalData.hasLogin || hasLogin) {
+      app.globalData.hasLogin = true;
+      /*wx.showToast({
+        title: 'login',
+        icon: 'success',
+        duration: 1000
+      });*/
       let userInfo = wx.getStorageSync('userInfo');
+      if(userInfo.loginType && userInfo.loginType == 1) {
+        this.setData({
+          phoneBtnShow: false
+        });
+      }
+      if(userInfo.avatarUrl == "") {
+        userInfo.avatarUrl = "/static/images/my.png";
+      }
       this.setData({
         userInfo: userInfo,
         hasLogin: true
@@ -36,10 +57,17 @@ Page({
       util.request(api.UserIndex).then(function(res) {
         if (res.errno === 0) {
           that.setData({
-            order: res.data.order
+            order: res.data.order,
+            rideorder: res.data.rideorder
           });
         }
       });
+    } else {
+      /*wx.showToast({
+        title: 'logout',
+        icon: 'success',
+        duration: 1000
+      });*/
     }
   },
   onHide: function() {
@@ -78,6 +106,27 @@ Page({
       let route = e.currentTarget.dataset.route
       try {
         wx.setStorageSync('tab', tab);
+      } catch (e) {
+
+      }
+      wx.navigateTo({
+        url: route,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    } else {
+      wx.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    };
+  },
+  goRideOrderIndex(e) {
+    if (this.data.hasLogin) {
+      let tab = e.currentTarget.dataset.index
+      let route = e.currentTarget.dataset.route
+      try {
+        wx.setStorageSync('ridetab', tab);
       } catch (e) {
 
       }
@@ -179,6 +228,9 @@ Page({
       encryptedData: e.detail.encryptedData
     }, 'POST').then(function(res) {
       if (res.errno === 0) {
+        let userInfo = wx.getStorageSync('userInfo');
+        userInfo.mobile = res.data.phone;
+        wx.setStorageSync('userInfo', userInfo);
         wx.showToast({
           title: '绑定手机号码成功',
           icon: 'success',

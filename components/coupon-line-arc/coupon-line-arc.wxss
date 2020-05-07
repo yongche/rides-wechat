@@ -1,0 +1,28 @@
+/* components/coupon-line-arc.wxss */
+.coupon-line-arc{
+  width: 100%;
+  position: absolute;
+  top: 148rpx;
+}
+.left-arc,.right-arc{
+  width: 0rpx;
+  height: 0rpx;
+  border: 12rpx solid #ff5252;
+  border-radius: 12rpx;
+  position: absolute;
+  top: 0rpx;
+}
+.left-arc{
+ left: -12rpx;
+}
+.right-arc{
+  right: -12rpx;
+}
+.dash-line{
+  width: 488rpx;
+  height: 0rpx;
+  border-top: 1rpx dashed #C8C8C8;
+  position: absolute;
+  top: 12rpx;
+  left: 14rpx;
+}

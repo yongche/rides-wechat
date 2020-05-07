@@ -1,0 +1,7 @@
+<!--components/money/money.wxml-->
+<view class="waitToPay_money_box my-class">
+    <view>
+        <text class="waitToPay_money">{{money}}</text>
+        <text class="waitToPay_money_unit">元</text>
+    </view>
+</view>

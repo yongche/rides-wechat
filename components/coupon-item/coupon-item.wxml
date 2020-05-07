@@ -1,0 +1,37 @@
+<!-- 优惠券礼包弹窗 优惠券列表item -->
+<view class='coupon-component my-class' bindtap="select_coupon" data-promotioninfo="{{promotion_info}}">
+  <view class='coupon-top {{style_type=="1"?"coupon-top":"coupon-top-702"}}'>
+      <view class='coupon-one-value' wx:if="{{facevalue.length<=2}}">
+          <view class='one-value'>
+              <text class='coupon_value {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{facevalue[0]}}</text>
+              <text class='coupon_unit {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{facevalue[1]}}</text>
+          </view>
+        </view>
+        <view class='coupon-two-value' wx:else>
+          <view class='double-value'>
+            <text class='coupon_value {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{facevalue[0]}}</text>
+            <text class='coupon_unit {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{facevalue[1]}}</text>
+          </view>
+          <view class='double-value'>
+            <text class='coupon_value {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{facevalue[2]}}</text>
+            <text class='coupon_unit {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{facevalue[3]}}</text>
+          </view>
+        </view>
+    <view class='verticle-line'></view>
+    <view class='coupon-content {{style_type=="1"?"coupon-content-300":"coupon-content-450"}}'>
+      <view class='coupon-name {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{coupon_name}}</view>
+      <!-- <view class='coupon-name'>老用户福利券老用户福</view> -->
+      <view class='coupon-effective {{!can_select_coupon?"unvalid_coupon_color":""}}'>{{coupon_effective}}</view>
+      <!-- <view class='coupon-effective'>有效期至2018年03月22日</view> -->
+    </view>
+  </view>
+  <coupon-line-arc wx:if="{{prompt&&prompt.length>0}}"></coupon-line-arc>
+  <view class='coupon-bottom' wx:if="{{prompt&&prompt.length>0}}">
+      <p class="coupon-bottom-content">{{prompt}}</p>
+  </view>
+  <image  wx:if="{{show_selected_coupon_logo}}" class='selected_coupon_logo' src="../../images/selected_coupon_logo.png"></image>
+  <view wx:if="{{show_select_icon}}" class='gifts_select_status'>
+      <image wx:if="{{show_select_icon&&gifts_selected}}" class='gifts_selected' src="../../images/gifts_selected.png"></image>
+      <image wx:elif="{{show_select_icon&&!gifts_selected}}" class='gifts_selected' src="../../images/gifts_unselect.png"></image>
+    </view>
+</view>

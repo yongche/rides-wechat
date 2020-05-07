@@ -1,0 +1,27 @@
+.view-box{
+    padding: 30rpx 24rpx 0 24rpx;
+}
+.cancel-rule{
+    margin-top: 45rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cancel-rule text{
+    font-size: 13px;
+    color: #0A7DE6;
+    margin-left: 8rpx;
+    vertical-align: bottom;
+}
+.pay-button{
+    background: #AB956D;
+    border-radius: 8rpx;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 23rpx;
+    width:702rpx;
+    height: 88rpx;
+}
+.pay-window{
+    margin-top: 32rpx;
+}

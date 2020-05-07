@@ -1,0 +1,16 @@
+/* components/modal/modal.wxss */
+page{
+    height: 100%;
+}
+.modal{
+    width: 750rpx;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}

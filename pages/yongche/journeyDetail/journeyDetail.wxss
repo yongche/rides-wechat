@@ -1,0 +1,212 @@
+page {
+    height: 100%;
+}
+
+.journey_detail_container {
+    width: 750rpx;
+    height: 100%;
+}
+
+.personal-info {
+    /* background: #ffffff; */
+}
+
+.list-detail {
+    margin-top: 24rpx;
+}
+
+.sure_pay {
+    position: fixed;
+    bottom: 24rpx;
+    left: 24rpx;
+    width: 702rpx;
+    height: 88rpx;
+    background: #AB956D;
+    border-radius: 8rpx;
+    font-size: 34rpx;
+    color: #FFFFFF;
+}
+
+.cancel_order {
+    width: 702rpx;
+    height: 88rpx;
+    background: #FFFFFF;
+    border: 1rpx solid #979797;
+    border-radius: 8rpx;
+    font-size: 34rpx;
+    color: #646464;
+    position: fixed;
+    bottom: 24rpx;
+    left: 24rpx;
+}
+
+.arrow_blue {
+    width: 12rpx;
+    height: 10rpx;
+}
+
+.selected_coupon_toast {
+    width: 578rpx;
+    height: 463rpx;
+    background: #fff;
+    border: 1rpx solid #fff;
+    border-radius: 14rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.coupon_item_shadow {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.20);
+}
+
+.selected_coupon_toast_title {
+    font-size: 28rpx;
+    color: #323232;
+    font-weight: bold;
+    text-align: center;
+    margin: 41rpx 0 18rpx 0;
+}
+
+.confirm_check {
+    width: 513rpx;
+    height: 78rpx;
+    background: #ff5252;
+    border: 1rpx solid #ff5252;
+    border-radius: 8rpx;
+    font-size: 34rpx;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.change_coupon_tips_view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 42rpx;
+}
+
+.change_coupon_tips {
+    font-size: 24rpx;
+    color: #0A7DE6;
+    margin-right: 8rpx;
+}
+
+.can_selected_coupon_list_container{
+  width: 750rpx;
+  height: 728rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.can_selected_coupon_list {
+    width: 750rpx;
+    height: 640rpx;
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: scroll;
+}
+
+.can_selected_coupon_list_title {
+    font-size: 32rpx;
+    color: #323232;
+    font-weight: bold;
+    text-align: center;
+    margin: 38rpx 0;
+}
+
+.can_select_coupon {
+    width: 702rpx !important;
+}
+
+.can_selected_coupon_list_close {
+    width: 72rpx;
+    height: 72rpx;
+    position: absolute;
+    right: 24rpx;
+    top: 0rpx;
+}
+
+.cut-coupons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.horizontal-cut-line {
+    width: 120rpx;
+    height: 0;
+    position: relative;
+}
+
+.cut-tips {
+    font-size: 26rpx;
+    color: #888888;
+    margin: 0 21rpx;
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 3),
+only screen and (-o-min-device-pixel-ratio: 3),
+only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio:3) {
+  .horizontal-cut-line:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    background: #e1e1e1;
+    width: 120rpx;
+    height: 1rpx;
+    -webkit-transform: scaleY(0.3333);
+    transform: scaleY(0.3333);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio:2) {
+  .horizontal-cut-line:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    background: #e1e1e1;
+    width: 120rpx;
+    height: 1rpx;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+}
+
+.no_use_coupon_box{
+    margin: 22rpx 50rpx 40rpx 50rpx;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .gifts_selected{
+    width: 36rpx;
+    height: 36rpx;
+  }
+  .gifts_select_status{
+    width: 36rpx;
+    height: 36rpx;
+  }
+  .no_use_coupon_tips{
+    font-size: 34rpx;
+    color: #323232;
+  }
+  .confirm_check_box{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+  }

@@ -1,0 +1,13 @@
+{
+"navigationBarTitleText": "易到开放平台",
+  "usingComponents": {
+    "address-list": "/components/address-list/list",
+    "driver-state": "/components/driver-state/state",
+    "Btn": "/components/button/button",
+    "Modal": "/components/modal/modal",
+    "Money": "/components/money/money",
+    "i-action-sheet": "../../../iview/action-sheet/index",
+    "i-toast": "../../../iview/toast/index",
+    "coupon-item":"/components/coupon-item/coupon-item"
+  }
+}

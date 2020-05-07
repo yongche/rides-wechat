@@ -1,0 +1,25 @@
+<wxs src="../../common/filter.wxs" module="filter" />
+<view class='container {{infoType == 1 ? "container_2" : ""}}'>
+  <view class='subContainer'>
+    <!-- 头像 -->
+    <image src="{{driverProfile.length>0?driverProfile:driver_photo_id}}" class='profile'></image>
+    <!-- 司机、车辆信息 -->
+    <block wx:if="{{infoType == 1}}">
+      <view class='info'>
+        <text class="driverName">{{driverName}}</text>
+        <view class="carInfo">
+            <text>{{carType}}({{color}})</text>
+            <text class="plateNumber_2">{{plateNumber}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='info'>
+        <text class="carType fontbold">{{carType}}({{color}})</text>
+        <text class="plateNumber fontbold">{{plateNumber}}</text>
+      </view>
+    </block>
+  </view>
+  <!-- 电话 -->
+  <image src="../../images/phone.png" class='phoneCall' data-phonenumber="{{phoneNumber}}" bindtap='phoneCall'></image>
+</view>

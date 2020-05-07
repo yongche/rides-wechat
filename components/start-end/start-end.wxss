@@ -1,0 +1,17 @@
+.component-box{
+    margin: 14rpx 0 34rpx 0;
+}
+.address-box{
+    color:#646464;
+    font-size: 16px;
+    margin: 15rpx 0 15rpx 0rpx;
+    display: flex;
+    justify-items: center;
+}
+.address-text{
+    margin-left: 16rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+}

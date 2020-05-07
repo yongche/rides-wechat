@@ -63,9 +63,12 @@ Page({
             key: "token",
             data: res.data.data.token,
             success: function() {
-              wx.switchTab({
+              /*wx.switchTab({
                 url: '/pages/ucenter/index/index'
-              });
+              });*/
+              wx.navigateBack({
+                delta: 2
+              })
             }
           });
         } else {

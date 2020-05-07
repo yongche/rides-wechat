@@ -1,0 +1,49 @@
+var timerFilter = function(time) {
+  var tempStr = '0' + time;
+  return tempStr.substring(tempStr.length - 2);
+};
+/**
+截取行程状态前两位
+*/
+var getPre = function(str) {
+  if (str) {
+    return str.substring(0, 2);
+  } else {
+    return '';
+  }
+};
+/**
+截取行程状态前后两位
+*/
+var getSuf = function(str) {
+  if (str) {
+    return str.substring(2, 4);
+  } else {
+    return '';
+  }
+};
+/**
+截取指定长度字符串并拼接省略号
+*/
+var splitString = function (str, length) {
+    if (typeof str == 'string') {
+        return str.substring(0, length) + '...';
+    } else {
+        return str;
+    }
+};
+/**
+ * 
+ * @param str 字符串（去掉 字符串 首尾的字符）
+ */
+function sliceHeadEnd(str){
+  var length = str.length;
+  return str.slice(1,length - 1)
+}
+module.exports = {
+  timerFilter: timerFilter,
+  getPre: getPre,
+  getSuf: getSuf,
+  splitString: splitString,
+  sliceHeadEnd: sliceHeadEnd
+};

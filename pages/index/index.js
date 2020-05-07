@@ -124,6 +124,10 @@ Page({
     // 页面关闭
   },
   getCoupon(e) {
+    let hasLogin = wx.getStorageSync('hasLogin');
+    if(hasLogin) {
+      app.globalData.hasLogin = true;
+    }
     if (!app.globalData.hasLogin) {
       wx.navigateTo({
         url: "/pages/auth/login/login"

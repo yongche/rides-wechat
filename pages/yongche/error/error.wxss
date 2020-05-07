@@ -1,0 +1,19 @@
+/* pages/yongche/error/error.wxss */
+
+.errorImg {
+  width: 480rpx;
+  height: 337rpx;
+  margin-top: 161rpx;
+}
+
+.errorContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorTips {
+  font-size: 28rpx;
+  color: #646464;
+  margin-top: 56rpx;
+}

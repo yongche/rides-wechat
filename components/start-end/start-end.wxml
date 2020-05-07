@@ -1,0 +1,14 @@
+<view class="component-box custom-class">
+    <view class="address-box">
+        <view style="display: flex;align-items: center">
+            <image src="../../images/address_point.png" style="width: 10rpx;height:10rpx"></image>
+        </view>
+        <view class="address-text">{{start}}</view>
+    </view>
+    <view class="address-box">
+        <view style="display: flex;align-items: center">
+            <image src="../../images/address_point.png" style="width: 10rpx;height:10rpx"></image>
+        </view>
+        <view class="address-text">{{end}}</view>
+    </view>
+</view>

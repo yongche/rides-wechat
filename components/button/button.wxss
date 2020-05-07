@@ -1,0 +1,9 @@
+/* components/button.wxss */
+button::after{
+  border: none;
+}
+.defaultCss{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

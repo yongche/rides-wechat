@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "易到开放平台",
+    "usingComponents": {
+        "List": "/components/search_result_list/list"
+      }
+
+}

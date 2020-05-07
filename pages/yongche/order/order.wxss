@@ -1,0 +1,368 @@
+/**index.wxss**/
+
+.yongche_container {
+    padding-top: 25rpx;
+}
+
+.topContainer {
+    /* border-top: 1px solid #E1E1E1; */
+    /* border-bottom: 1px solid #E1E1E1; */
+    position: relative;
+    width: 750rpx;
+    height: 288rpx;
+}
+
+.diy_line {
+    width: 718rpx;
+    height: 0;
+    /* border-top: 1px solid #E1E1E1; */
+    position: absolute;
+    top: 96rpx;
+    right: 0;
+}
+
+.diy_line_3 {
+    float: left;
+    width: 750rpx;
+    height: 0;
+    /* border-top: 1px solid #E1E1E1; */
+    position: absolute;
+    /* bottom: 0; */
+    /* right: 0; */
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 3),
+only screen and (-o-min-device-pixel-ratio: 3),
+only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio:3) {
+    .diy_line:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.33333);
+        transform: scaleY(0.33333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .diy_line_3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1rpx;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.33333);
+        transform: scaleY(0.33333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .topContainer:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.33333);
+        transform: scaleY(0.33333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio:2) {
+    .diy_line:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .diy_line_3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1rpx;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .topContainer:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+
+.diy_line_2 {
+    top: 190rpx;
+}
+
+.bookingCar {
+    width: 702rpx;
+    height: 88rpx;
+    border-radius: 8rpx;
+    color: #ffffff;
+    position: fixed;
+    bottom: 24rpx;
+    left: 24rpx;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 34rpx;
+}
+
+.bookingCarNot {
+    background: #E1E1E1;
+}
+
+.bookingCarNow {
+    background: #AB956D;
+}
+
+.bookingTips {
+    margin-top: 140rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.estimate_css {
+    display: table-cell;
+    vertical-align: bottom;
+    font-weight: bold;
+    font-size: 24rpx;
+    color: #323232;
+}
+
+.warning_box,
+.no_network_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning {
+    width: 220rpx;
+    height: 68rpx;
+}
+
+.no_network {
+    width: 360rpx;
+    height: 112rpx;
+}
+
+.warning_tips,
+.no_network_tips {
+    font-size: 28rpx;
+    color: #323232;
+}
+
+.bookingReady {
+    font-size: 24rpx;
+    color: #323232;
+}
+
+.bookingNotReady {
+    font-size: 28rpx;
+    color: #888888;
+}
+
+.estimate_money {
+    font-size: 72rpx;
+    color: #AB956D;
+    font-weight: 500;
+}
+
+.waitToPay {
+    width: 580rpx;
+    height: 650rpx;
+    background: #ffffff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.waitToPay_title {
+    font-size: 40rpx;
+    color: #323232;
+    font-weight: bold;
+}
+
+.waitToPay_tips {
+    font-size: 28rpx;
+    color: #646464;
+    margin-top: 8rpx;
+}
+
+.lookTravelDetailBtn {
+    width: 515rpx;
+    height: 80rpx;
+    background: #FFFFFF;
+    border: 1px solid #C8C8C8;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+    color: #646464;
+    margin-top: 87rpx;
+    font-weight: bold;
+}
+
+.goPayBtn {
+    width: 515rpx;
+    height: 80rpx;
+    background: #AB956D;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    margin-top: 24rpx;
+    font-weight: bold;
+}
+
+.traveling {
+    position: fixed;
+    width: 590rpx;
+    height: 240rpx;
+    top: 50rpx;
+    left: 80rpx;
+    background: #FFFFFF;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding-left: 29rpx;
+    overflow: hidden;
+}
+
+.traveling_title {
+    font-size: 40rpx;
+    color: #323232;
+}
+
+.traveling_tips {
+    font-size: 20rpx;
+    color: #646464;
+}
+
+.traveling_car_type {
+    font-size: 28rpx;
+    color: #646464;
+    margin-top: 10rpx;
+    width: 210rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.traveling_plate_number {
+    width: 257rpx;
+    height: 48rpx;
+    background: #4A90E2;
+    border: 1px solid #2D6EBA;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 26rpx;
+    line-height: 48rpx;
+    text-align: center;
+    margin-top: 12rpx;
+}
+
+.traveling_img {
+    width: 145rpx;
+    height: 145rpx;
+    position: absolute;
+    top: 60rpx;
+    right: 50rpx;
+}
+
+.giftsBox {
+    width: 580rpx;
+    height: 820rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #ff5252;
+    background: #ff5252;
+    border-radius: 20rpx;
+    overflow: hidden;
+    padding-top: 48rpx;
+    box-sizing: border-box;
+}
+
+.giftsTop {
+    width: 580rpx;
+    height: 560rpx;
+}
+
+.giftsBottom {
+    width: 580rpx;
+    height: 302rpx;
+    background: #ff5252;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -10rpx 20rpx rgba(0, 0, 0, 0.2) inset;
+}
+
+.gifts_close_box {
+    width: 72rpx;
+    height: 72rpx;
+    position: absolute;
+    left: 50%;
+    bottom: calc((100% - 820rpx)/4 - 36rpx);
+    transform: translate(-50%, 0);
+}
+
+.gifts_close {
+    width: 72rpx;
+    height: 72rpx;
+}
+
+.coupon-image {
+    width: 580rpx;
+    height: 302rpx;
+}
+
+.bottom-empty-space {
+    width: 100%;
+    height: 85rpx;
+}
+
+.discount-info {
+    font-size: 24rpx;
+    color: #888888;
+    font-weight: normal;
+    text-align: center;
+    margin-top: -15rpx;
+}

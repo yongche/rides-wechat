@@ -1,0 +1,23 @@
+<!-- 行程 费用 详情 -->
+<view class="travel_end_list">
+    <view class="travel_end_title">{{pay_status_tips}}</view>
+    <Money my-class="allMoney" money="{{amount}}" />
+    <view wx:for="{{main_fee_data}}" wx:for-index="idx" wx:for-item="itemName" wx:key="idx" class="commonFlex travel_end_cost_flex">
+        <view class="columnFlex">
+            <text class="carPayTotal">{{itemName.title}}</text>
+            <text class="carPayTotalTips">{{itemName.content}}</text>
+        </view>
+        <view class="carPayMoney"><text>{{itemName.value}}</text></view>
+    </view>
+    <!-- <view class="luxuryFav commonFlex travel_end_cost_flex">
+        <text class="carPayTotal">豪华体验优惠</text>
+        <text class="luxuryFavMoney">{{travel_end_list.luxuryFavMoney}}元</text>
+    </view> -->
+    <view class="cut_off_line"></view>
+    <view class="travel_end_list_detail commonFlex travel_end_cost_flex" data-orderid="{{orderId}}" bindtap="travel_end_list_detail">
+        <text>查看详情</text>
+        <image class="travel_end_list_img" src="../../images/right_arrow.png">
+        </image>
+    </view>
+    <image wx:if="{{pay_status == 3}}" class="pay_done" src="../../images/pay_done.png"></image>
+</view>

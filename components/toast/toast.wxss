@@ -1,0 +1,39 @@
+/* components/yd-toast.wxss */
+.toast_container{
+  width: 750rpx;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toast_box{
+  width: auto;
+  padding: 24rpx;
+  background: rgba(0, 0, 0,0.6);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toast_box_bottom{
+  position: absolute;
+  bottom: 80rpx;
+}
+.toast_box_top{
+  position: absolute;
+  top: 80rpx;
+}
+.toast_img{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 15rpx;
+}
+.toast_title{
+  color: #ffffff;
+  font-size: 36rpx;
+}

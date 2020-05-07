@@ -1,0 +1,103 @@
+/* pages/yongche/dispatch.wxss */
+page{
+    /* height: 100%; */
+}
+.dispatch_container {
+    width: 750rpx;
+    /* height: 100%; */
+}
+
+.dispacch_title {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #323232;
+}
+
+.timer {
+    height: 100rpx;
+    font-size: 72rpx;
+    color: #323232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 83rpx;
+}
+
+.dispacch_tips {
+    font-size: 28rpx;
+    color: #323232;
+}
+
+.dispatch_block {
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125rpx;
+}
+.commonFlex {
+    display: flex;
+}
+
+.columnFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+.travel_end_cost_flex {
+    justify-content: space-between;
+}
+.cut_off_line {
+    width: 100%;
+    height: 0;
+    border-top: 1px dashed #e1e1e1;
+    margin-top: 48rpx;
+}
+.cancel_order {
+    width: 702rpx;
+    height: 88rpx;
+    background: #FFFFFF;
+    border: 1rpx solid #979797;
+    border-radius: 8rpx;
+    font-size: 34rpx;
+    color: #646464;
+    position: fixed;
+    bottom: 24rpx;
+    left: 24rpx;
+}
+.no_servering_city{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    /* height: 100%; */
+    z-index: 3;
+    background: #F5F5F5;
+    box-sizing: border-box;
+    padding-top: 161rpx;
+  }
+  .no_servering_city_img{
+    width: 480rpx;
+    height: 337rpx;
+  }
+  .no_servering_city_tips{
+    font-size: 28rpx;
+    color: #888888;
+    margin-top: 56rpx;
+  }
+  .request_order{
+    width: 702rpx;
+    height: 88rpx;
+    border-radius: 8rpx;
+    font-size: 34rpx;
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 24rpx;
+    left: 24rpx;
+    background: #AB956D;
+  }

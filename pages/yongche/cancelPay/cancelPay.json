@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "custom-button": "../../../components/button/button",
+    "pay-window": "../../../components/cancelOrder/pay-window/pay-window",
+    "start-end": "../../../components/start-end/start-end"
+  }
+}

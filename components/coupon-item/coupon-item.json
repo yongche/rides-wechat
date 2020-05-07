@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "coupon-line-arc": "../coupon-line-arc/coupon-line-arc"
+  }
+}

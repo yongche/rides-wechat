@@ -4,6 +4,26 @@ module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
   AboutUrl: WxApiRoot + 'home/about', //介绍信息
 
+  MapLocation: WxApiRoot + 'map/location', //定位
+  MapPlaceSearch: WxApiRoot + 'map/placesearch', //关键字搜索
+  MapDistance: WxApiRoot + 'map/distance', //距离
+  YopEstimateAll: WxApiRoot + 'yoptoft/estimateAll', //预估
+  YopGetAvailableService: WxApiRoot + 'yoptoft/getAvailableService', //获取可用服务
+  YopGetPrice: WxApiRoot + 'yoptoft/getPrice', //获取价格数据
+  YopCreateOrder: WxApiRoot + 'yoporder/create', //下单
+  YopGetCurrentAndUnpayOrder: WxApiRoot + 'yoporder/getCurrentAndUnpayOrder', //获取当前和未付订单
+  YopGetOrderInfo: WxApiRoot + 'yoporder/getOrderInfo', //获取订单信息
+  YopGetStatus: WxApiRoot + 'yoporder/getStatus', //获取订单状态
+  YopGetUserCouponList: WxApiRoot + 'yopcoupon/getUserCouponList', //获取优惠券列表
+  YopUseCoupon: WxApiRoot + 'yopcoupon/useCoupon', //使用优惠券
+  YopCancelOrder: WxApiRoot + 'yoporder/cancel', //取消订单
+  YopGetCancelOrderFee: WxApiRoot + 'yoporder/getCancelOrderFee', //取消订单费用
+  YopGetOrderTrack: WxApiRoot + 'yoporder/getOrderTrack', //获取订单轨迹
+  YopGetDriverLocation: WxApiRoot + 'yoporder/getDriverLocation', //获取司机位置
+  YopGetOrderList: WxApiRoot + 'yoporder/getOrderList', //获取订单列表
+  YopGetCostDetail: WxApiRoot + 'yoporder/getCostDetail', //获取订单计费信息
+  YopRideOrderPrepay: WxApiRoot + 'yoporder/prepay', //订单支付
+
   CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
   CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口
 

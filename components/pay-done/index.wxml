@@ -1,0 +1,10 @@
+<!--取消订单并支付完成组件-->
+<view class="view-box">
+    <start-end start="{{startPosition}}" end="{{endPosition}}"></start-end>
+    <done-window paidCount="{{amount}}" custom-class="done-window"></done-window>
+    <view class="cancel-rule" bindtap="lookRules">
+        <image src="../../images/notice.png" style="width: 28rpx;height: 28rpx"></image>
+        <text>取消行程规则</text>
+    </view>
+    <custom-button content="重新订车" my-class="yongche-button" bind:myevent="reOrder"></custom-button>
+</view>

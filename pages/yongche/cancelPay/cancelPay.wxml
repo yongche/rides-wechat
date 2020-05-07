@@ -1,0 +1,10 @@
+<!--有责不拦截须支付页面，暂时不需要跳转此页面-->
+<view class="view-box">
+    <start-end start="{{order_info.order.startPosition}}" end="{{order_info.order.endPosition}}"></start-end>
+    <pay-window payCount="{{order_info.order.payAmount}}" custom-class="pay-window"></pay-window>
+    <view class="cancel-rule" bindtap="lookRules">
+        <image src="../../../images/notice.png" style="width: 28rpx;height: 28rpx"></image>
+        <text>取消行程规则</text>
+    </view>
+    <custom-button content="去支付" my-class="pay-button" bind:myevent="payForOrder"></custom-button>
+</view>

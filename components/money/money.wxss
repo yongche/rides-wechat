@@ -1,0 +1,19 @@
+/* components/money/money.wxss */
+.waitToPay_money_box{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 81rpx;
+  }
+  .waitToPay_money{
+    font-size: 72rpx;
+    color: #AB956D;
+    font-weight: bold;
+  }
+  .waitToPay_money_unit{
+    font-size: 24rpx;
+    color: #323232;
+    bottom: 0;
+  }

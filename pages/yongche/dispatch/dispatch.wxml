@@ -1,0 +1,28 @@
+<!--派单页面 pages/yongche/dispatch.wxml-->
+<view class="dispatch_container">
+    <wxs src="../../../common/filter.wxs" module="filter" />
+    <!-- 正在派单中 -->
+    <view class="dispatch_block">
+        <text class="dispacch_title fontbold">派单中...</text>
+        <view class="timer">
+            <text class="minutes">{{filter.timerFilter(minutes)}}</text>
+            <text class="pointer">:</text>
+            <text class="seconds">{{filter.timerFilter(seconds)}}</text>
+        </view>
+        <text class="dispacch_tips">正在为您挑选司机</text>
+    </view>
+    <block wx:if="{{travel_status == 8}}">
+        <view class="no_servering_city">
+            <view class="no_servering_city_img_box">
+                <image class="no_servering_city_img" src="../../../images/empty_icon.png"></image>
+            </view>
+            <text class="no_servering_city_tips">{{no_servering_city_tips}}</text>
+        </view>
+    </block>
+    <block wx:if="{{travel_status != 8}}">
+        <Btn my-class="cancel_order fontbold" content="取消订单" data-userConfirmId="0" bind:myevent="cancelOrderAction" />
+    </block>
+    <block wx:else>
+        <Btn my-class="request_order fontbold" content="重新订车" bind:myevent="goBackOrder" />
+    </block>
+</view>

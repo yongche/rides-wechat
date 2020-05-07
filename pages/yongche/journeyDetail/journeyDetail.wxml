@@ -1,0 +1,89 @@
+<view class="journey_detail_container">
+    <!-- 正常行程中的状态 -->
+    <block wx:if="{{order_info&&!(order_info.order.status==2||order_info.order.status==3||order_info.order.status==8)}}">
+        <view class="personal-info">
+            <driver-state driverProfile="{{order_info.driver.photo}}" driverName="{{order_info.order.driverName}}"
+                plateNumber="{{order_info.order.vehicleNumber}}" carType="{{order_info.order.carBrand}}" color="{{order_info.order.carColor}}"
+                data-phone-num="{{order_info.driver.cellphone}}" bind:callphone="phoneCall" info-type="{{driverInfoType}}" />
+            <block wx:if="{{!serviceEnd}}">
+                <travel-state travel_state="{{travel_status}}" miles="{{route_distance}}" distance_unit="{{distanceUnit}}"
+                    estimate_time="{{route_duration}}" is_fee_computed="{{is_fee_computed}}" />
+            </block>
+            <block wx:if="{{order_info.order.status==4||order_info.order.status==5||order_info.order.status==6}}">
+                <select-coupon status="{{couponStatus}}" orderInfo="{{order_info}}" bind:showCouponList="showCouponList" />
+            </block>
+        </view>
+    </block>
+    <!--正在改派和正在派车order_info.order.status==2||order_info.order.status==3-->
+    <reassign-detail wx:elif="{{order_info.order.status==2||order_info.order.status==3}}" bookingInfo="{{order_info.booking_info}}"
+        orderTips="{{orderTips}}">
+    </reassign-detail>
+    <!--支付完成组件，从行程列表进入，有责支付完成时展示-->
+    <pay-done wx:elif="{{order_info.order.status==8&&order_info.order.payStatus==3}}" startPosition="{{order_info.order.startPosition}}"
+        endPosition="{{order_info.order.endPosition}}" amount="{{order_info.order.payAmount}}">
+    </pay-done>
+    <!-- 默认已选择的优惠券弹窗 -->
+    <Modal show="{{showSelectedCoupon}}">
+        <view class='selected_coupon_toast'>
+            <view class="selected_coupon_toast_title">已选定该优惠方式，将在行程结束后抵扣</view>
+            <coupon-item style_type="1" my-class="coupon_item_shadow" show_select_icon="{{false}}" show_selected_coupon_logo="{{true}}" facevalue="{{recommendPromotion.promotion.facevalue}}" coupon_name="{{recommendPromotion.promotion.coupon_name}}"
+                coupon_effective="{{recommendPromotion.promotion.description}}" prompt="" bind:select_coupon="" />
+            <view class='change_coupon_tips_view' bindtap='showCouponList'>
+                <text class='change_coupon_tips'>更换其他优惠方式</text>
+                <image class='arrow_blue' src="../../../images/arrow_blue.png"></image>
+            </view>
+            <view class="confirm_check_box">
+                <Btn my-class="confirm_check" content="我知道了" bind:myevent="confirm_check"></Btn>
+            </view>
+        </view>
+    </Modal>
+    <!-- 行程中重新选择 优惠券 -->
+    <Modal show="{{showCouponListModal}}">
+        <view class='can_selected_coupon_list_container'>
+            <image bindtap="closeCouponListModal" class='can_selected_coupon_list_close' src="../../../images/gifts_close.png"></image>
+            <view class='can_selected_coupon_list'>
+                <view class='can_selected_coupon_list_title'>请选择优惠方式，行程结束后自动抵扣</view>
+                <view class='no_use_coupon_box' bindtap="toggleNoUseCoupon">
+                    <view class="no_use_coupon_tips">不使用优惠券</view>
+                    <view class='gifts_select_status'>
+                        <image wx:if="{{no_use_coupon}}" class='gifts_selected' src="../../../images/gifts_selected.png"></image>
+                        <image wx:else class='gifts_selected' src="../../../images/gifts_unselect.png"></image>
+                    </view>
+                </view>
+                <!-- 可用优惠券 -->
+                <coupon-item style_type="2" promotion_info="{{item}}" show_select_icon="{{true}}"
+                    bind:select_coupon="selectTravellingCoupon" wx:for="{{canUseCouponList}}" wx:for-item="item"
+                    wx:for-index="idx" can_select_coupon="{{true}}" gifts_selected="{{item.is_selected}}" wx:key="item.coupon_id"
+                    my-class="can_select_coupon coupon_item_shadow" facevalue="{{item.promotion.facevalue}}" coupon_name="{{item.promotion.coupon_name}}"
+                    coupon_effective="{{item.promotion.description}}" prompt="" />
+                <!-- 优惠券列表分割线 -->
+                <view class='cut-coupons' wx:if="{{noUseCouponList.length>0}}">
+                    <view class='horizontal-cut-line'></view>
+                    <view class='cut-tips'>以下优惠方式不可用</view>
+                    <view class='horizontal-cut-line'></view>
+                </view>
+                <!-- 不可用优惠券 -->
+                <coupon-item style_type="2" can_select_coupon="{{false}}" wx:for="{{noUseCouponList}}" wx:for-item="item"
+                    wx:for-index="idx" wx:key="item.coupon_id" my-class="can_select_coupon coupon_item_shadow"
+                    facevalue="{{item.promotion.facevalue}}" coupon_name="{{item.promotion.coupon_name}}" coupon_effective="{{item.caption}}"
+                    prompt="" />
+            </view>
+
+        </view>
+    </Modal>
+    <block wx:if="{{serviceEnd && is_fee_computed != 0}}">
+        <!-- 行程结束清单  -->
+        <travel_cost_detail orderId="{{orderId}}" main_fee_data="{{order_info.order.main_fee_data}}" amount="{{amount}}"
+            pay_status_tips="{{pay_status_tips}}" pay_status="{{order_info.order.payStatus}}" />
+        <Btn wx:if="{{serviceEnd&&(order_info.order.payStatus == 1 || order_info.order.payStatus == 2) }}" my-class="sure_pay fontbold"
+            content="确认支付" bind:myevent="surePay" />
+        <Btn wx:if="{{serviceEnd&&order_info.order.payStatus == 3}}" my-class="sure_pay fontbold" content="继续订车"
+            bind:myevent="continue_booking_car" />
+    </block>
+    <block wx:if="{{showCancelOrder}}">
+        <Btn my-class="cancel_order fontbold" content="取消订单" bind:myevent="cancelOrder" />
+    </block>
+    <!-- 拨打电话 -->
+    <i-action-sheet visible="{{ action_sheet_visible }}" actions="{{phoneNumberActionSheet}}" show-cancel bind:cancel="cancelActionSheet"
+        bind:click="clickActionSheet" />
+</view>

@@ -1,0 +1,8 @@
+<template name="yd-toast">
+  <view class='toast_container' wx:if="{{show}}">
+    <view class='toast_box toast_box_{{position}}'>
+      <image wx:if="{{icon!='none'}}" class='toast_img' src="{{icon}}"></image>
+      <text class='toast_title'>{{title}}</text>
+    </view>
+  </view>
+</template>

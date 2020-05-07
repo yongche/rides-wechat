@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "i-index": "../../../iview/index/index",
+        "i-index-item": "../../../iview/index-item/index"
+    }
+}

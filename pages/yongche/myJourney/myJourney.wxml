@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="orders-switch">
+    <view class="item {{ showType == 1 ? 'active' : ''}}" bindtap="switchTab" data-index='1'>
+      <view class="txt">待付款</view>
+    </view>
+    <view class="item {{ showType == 2 ? 'active' : ''}}" bindtap="switchTab" data-index='2'>
+      <view class="txt">当前行程</view>
+    </view>
+    <view class="item {{ showType == 3 ? 'active' : ''}}" bindtap="switchTab" data-index='3'>
+      <view class="txt">历史行程</view>
+    </view>
+  </view>
+  <view class="no-order" wx:if="{{rideOrderList.length <= 0}}">
+    <view class="c">
+      <text>还没有任何订单呢</text>
+    </view>
+  </view>
+
+  <view slot="content">
+        <block wx:for="{{rideOrderPageList}}" wx:key="index">
+            <view bindtap="orderDetail" data-item="{{item}}">
+                <block-item
+                        showTravelState="{{item.showTravelState}}"
+                        isDoubt="{{item.isDoubt}}"
+                        travelState="{{item.travelState}}"
+                        feePayed="{{item.feePayed}}"
+                        showCancel="{{item.showCancel}}"
+                        isCompanyAccount="{{item.isCompanyAccount}}"
+                        showTopTitle="{{item.showTopTitle}}"
+                        dateTime="{{item.dateTime}}"
+                        showPassenger="{{item.showPassenger}}"
+                        passengerInfo="{{item.passengerInfo}}"
+                        showProblemTips="{{item.showProblemTips}}"
+                        problemTips="{{item.problemTips}}"
+                        showBottomTitle="{{item.showBottomTitle}}"
+                        bottomTitle="{{item.bottomTitle}}"
+                        showBottomTitleRight="{{item.showBottomTitleRight}}"
+                        bottomTitleRight="{{item.bottomTitleRight}}"
+                        showAddress="{{item.showAddress}}"
+                        startAddress="{{item.startAddress}}"
+                        endAddress="{{item.endAddress}}"
+                        stateDesc="{{item.stateDesc}}"
+                        showFeePaying="{{item.showFeePaying}}"
+                        feePaying="{{item.feePaying}}">
+                </block-item>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,77 @@
+/* components/travel_cost_detail/travel_cost_detail.wxss */
+.pay_done{
+    width: 174rpx;
+    height: 172rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.luxuryFavMoney{
+    font-size: 28rpx;
+    color: #AB956D;
+}
+.travel_end_list {
+    width: 702rpx;
+    /* height: 473rpx; */
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    border-radius: 8rpx;
+    margin: 0 24rpx 0;
+    box-sizing: border-box;
+    padding: 0 33rpx;
+    position: relative;
+}
+.carPayTotal{
+    font-size: 28rpx;
+    color: #323232;
+}
+.carPayTotalTips {
+    font-size: 24rpx;
+    color: #888888;
+}
+.travel_end_title {
+    text-align: center;
+    font-size: 28rpx;
+    color: #888888;
+    margin-top: 46rpx;
+}
+.cut_off_line {
+    width: 100%;
+    height: 0;
+    border-top: 1px dashed #e1e1e1;
+    margin-top: 48rpx;
+}
+.allMoney {
+    height: 78rpx;
+    margin-top: 6rpx !important;
+    margin-bottom: 42rpx;
+}
+
+.commonFlex {
+    display: flex;
+}
+
+.columnFlex {
+    display: flex;
+    flex-direction: column;
+}
+.travel_end_cost_flex {
+    justify-content: space-between;
+}
+.travel_end_list_img {
+    width: 24rpx;
+    height: 24rpx;
+}
+.travel_end_list_detail {
+    height: 80rpx;
+    font-size: 28rpx;
+    color: #646464;
+    align-items: center;
+}
+.luxuryFav {
+    margin-top: 5rpx;
+}
+.carPayMoney {
+    font-size: 28rpx;
+    color: #000000;
+}

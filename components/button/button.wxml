@@ -1,0 +1,6 @@
+<!--components/button.wxml-->
+<!-- 使用该组件时 -->
+<!-- 样式采用外部样式时 样式属性名必须传成 my-class=’你页面对应的class名‘ -->
+<!-- 事件 必须传成 bindmyevent='你页面对应的事件处理函数名' -->
+<!-- 例子可以查看 index页面的 Btn组件的使用方式 -->
+<view class='defaultCss my-class' bindtap='btnClick'>{{content}}</view>

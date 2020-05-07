@@ -1,0 +1,6 @@
+<!--components/coupon-line-arc.wxml-->
+<view class='coupon-line-arc'>
+    <view class='left-arc' style="border: 12rpx solid {{arcColor}}"></view>
+    <view class='dash-line'></view>
+    <view class='right-arc'></view>
+  </view>

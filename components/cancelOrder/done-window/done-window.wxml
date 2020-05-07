@@ -1,0 +1,10 @@
+<!--有责支付，完成展示金额组件-->
+<view class="custom-class">
+    <view class="info-window" style="background-image: url('https://i3.yongche.name/media/g4/M00/02/26/rBEDBVuhw-6IHjI_AAAv6ELXFSEAABA7QJZZt0AADAA426.png');">
+        <view class="info-text">取消行程过晚，已支付取消费</view>
+        <view>
+            <text class="count">{{paidCount}}</text>
+            <text>元</text>
+        </view>
+    </view>
+</view>

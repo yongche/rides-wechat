@@ -1,0 +1,29 @@
+<!--
+        4    //司机已确认
+        5    //司机已到达
+        6    //服务开始（服务中）
+        9    // 预订成功 
+        10   // 等待服务
+ -->
+<view class="travel_state">
+        <view class="diy_line"></view>
+    <view class="leftBox">
+        <block wx:if="{{travel_state == 4}}">
+            <text class="default">距您 <text class="highLight">{{miles}}</text>{{distance_unit}} 预计 <text class="highLight">{{estimate_time}}</text>分钟到达</text>
+        </block>
+        <block wx:elif="{{travel_state == 5}}">
+            <text class="default">司机已经到达，请尽快上车</text>
+        </block>
+        <block wx:elif="{{travel_state == 6}}">
+            <text class="default">行程约 <text class="highLight">{{miles}}</text> {{distance_unit}} 预计 <text class="highLight">{{estimate_time}}</text> 分钟到达</text>
+        </block>
+        <block wx:elif="{{travel_state == 7&&is_fee_computed != null&&is_fee_computed == 0}}">
+            <text class="default">账单确认中...</text>
+        </block>
+        <!-- <block wx:else>
+        </block> -->
+    </view>
+    <view class="rightBox">
+        <text class="highLight">{{stateTips[travel_state]}}</text>
+    </view>
+</view>

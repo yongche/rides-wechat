@@ -1,0 +1,43 @@
+<wxs src="../../../common/filter.wxs" module="split" />
+<view class="component-box custom-class">
+    <view class="travel-state {{isDoubt ? 'doubt': isHistoryDone ? 'history' : '' }}" wx:if="{{showTravelState}}">
+        <view>
+            <view class="top">{{split.getPre(travelState)}}</view>
+            <view class="bottom">{{split.getSuf(travelState)}}</view>
+        </view>
+    </view>
+    <view class="travel-count" style="{{feePayed.length<=4}} ? 'font-size: 20px' : 'font-size: {{80/feePayed.length}}px'" wx:else>
+        <view>
+            <text>￥</text>
+            <text>{{feePayed}}</text>
+        </view>
+        <view class="cancel-text" wx:if="{{showCancel}}">已取消</view>
+        <view class="company-account" wx:if="{{isCompanyAccount}}">企业账户</view>
+    </view>
+    <view class="travel-info">
+        <view class="top-title" wx:if="{{showTopTitle}}">
+            <text>{{dateTime}}</text>
+            <text class="passenger-info" wx:if="{{showPassenger}}">{{passengerInfo}}</text>
+            <text class="problem-tips" wx:if="{{showProblemTips}}">{{problemTips}}</text>
+        </view>
+        <view class="bottom-title" wx:if="{{showBottomTitle}}">
+            <text>{{bottomTitle}}</text>
+            <text class="right" wx:if="{{showBottomTitleRight}}">{{bottomTitleRight}}</text>
+        </view>
+        <view class="address" wx:if="{{showAddress}}">
+            <view class="address-box">
+                <image src="../../../images/address_point.png" style="width: 10rpx;height:10rpx"></image>
+                <view class="address-text">{{startAddress}}</view>
+            </view>
+            <view class="address-box">
+                <image src="../../../images/address_point.png" style="width: 10rpx;height:10rpx"></image>
+                <view class="address-text">{{endAddress}}</view>
+            </view>
+        </view>
+        <view class="state-desc" wx:else>
+            <text>{{stateDesc}}</text>
+            <text class="count" wx:if="{{showFeePaying}}">{{feePaying}}</text>
+            <text wx:if="{{showFeePaying}}">元</text>
+        </view>
+    </view>
+</view>

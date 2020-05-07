@@ -1,5 +1,17 @@
 {
   "pages": [
+    "pages/yongche/order/order",
+    "pages/yongche/error/error",
+    "pages/yongche/searchAddress/searchAddress",
+    "pages/yongche/myJourney/myJourney",
+    "pages/yongche/webview/webview",
+    "pages/yongche/journeyDetail/journeyDetail",
+    "pages/yongche/dispatch/dispatch",
+    "pages/yongche/cancelOrder/cancelOrder",
+    "pages/yongche/cost_detail/cost_detail",
+    "pages/yongche/cancelPay/cancelPay",
+    "pages/yongche/payDone/payDone",
+    "pages/yongche/city_select/city_select",
     "pages/index/index",
     "pages/catalog/catalog",
     "pages/newGoods/newGoods",
@@ -42,6 +54,20 @@
     "pages/ucenter/aftersaleList/aftersaleList",
     "pages/ucenter/aftersaleDetail/aftersaleDetail"
   ],
+  "subpackages": [
+    {   
+      "root": "subPackageOne",
+      "name":"subPackageOne",
+      "pages": [
+        "pages/myCouponList/myCouponList"
+      ]   
+    }   
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取上车地点方便快速订车"
+    }
+  },
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "易到开放平台",
@@ -57,10 +83,16 @@
     "color": "#666",
     "list": [
       {
+        "pagePath": "pages/yongche/order/order",
+        "iconPath": "images/order_gray.png",
+        "selectedIconPath": "images/order.png",
+        "text": "易到打车"
+      },
+      {
         "pagePath": "pages/index/index",
         "iconPath": "static/images/home.png",
         "selectedIconPath": "static/images/home@selected.png",
-        "text": "首页"
+        "text": "商城首页"
       },
       {
         "pagePath": "pages/catalog/catalog",

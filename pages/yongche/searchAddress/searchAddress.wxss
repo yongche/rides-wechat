@@ -1,0 +1,220 @@
+/* pages/yongche/searchAddress/searchAddress.wxss */
+
+page {
+    background: #FAFAFA;
+}
+
+.inputBox {
+    height: 96rpx;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 31rpx 0 24rpx;
+    background: #ffffff;
+    position: relative;
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio:2) {
+    .inputBox:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .diy_line:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .city_selected_box:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: #E1E1E1;
+        width: 1px;
+        height: 56rpx;
+        -webkit-transform: scaleX(0.5);
+        transform: scaleX(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 3),
+only screen and (-o-min-device-pixel-ratio: 3),
+only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio:3) {
+    .inputBox:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.3333);
+        transform: scaleY(0.3333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .diy_line:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: #E1E1E1;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.3333);
+        transform: scaleY(0.3333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .city_selected_box:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: #E1E1E1;
+        width: 1px;
+        height: 56rpx;
+        -webkit-transform: scaleX(0.33333);
+        transform: scaleX(0.33333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+.diy_line {
+    width: 750rpx;
+    height: 0;
+    /* border-top: 1px solid #E1E1E1; */
+    position: absolute;
+    top: 96rpx;
+    right: 0;
+}
+.input_cpn {
+    width: 518rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 19rpx;
+    flex: 1;
+}
+
+.inputClass {
+    flex: 1;
+    margin-right: 35rpx;
+}
+
+.search_icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 14rpx;
+}
+
+.cancel_search {
+    font-size: 30rpx;
+    color: #888888;
+}
+
+.placeholer_css {
+    font-size: 30rpx;
+    color: #E1E1E1;
+}
+
+.clear_icon_box {
+    width: 30rpx;
+    height: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 33rpx;
+    right: 31rpx;
+    z-index: 3;
+}
+
+.clear_icon {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.search_null {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 234rpx;
+}
+
+.search_null_top_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.yinhao_right {
+    /* position: absolute;
+    top: 0;
+    right: -4rpx; */
+}
+
+.text_ellipsis {
+    max-width: 600rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.font34 {
+    font-size: 34rpx;
+    color: #646464;
+}
+
+.font30 {
+    font-size: 30rpx;
+    color: #646464;
+}
+
+.city_selected_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 56rpx;
+    /* border-right: 1px solid #e1e1e1; */
+    box-sizing: border-box;
+    padding-right: 32rpx;
+    position: relative;
+}
+
+.triangel {
+    width: 16rpx;
+    height: 16rpx;
+    margin-left: 7rpx;
+}
+
+.city_selected {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #323232;
+}

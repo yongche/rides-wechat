@@ -1,0 +1,19 @@
+<!--改派提醒详情页组件-->
+<view class="prompt" wx:if="{{orderTips}}">
+    <view class="title">改派提醒</view>
+    <view class="content">{{orderTips}}</view>
+</view>
+<view class="weui-cells weui-cells_after-title more-top" wx:for="{{bookingInfo.data}}" wx:for-item="outerItem" wx:for-index="outerIndex" wx:key="outerIndex">
+    <view class="weui-cell" wx:for="{{outerItem}}" wx:for-item="innerItem" wx:for-index="innerIndex" wx:key="innerIndex" >
+        <view class="weui-cell__bd">{{innerItem.title}}</view>
+        <view class="weui-cell__ft">
+            <view>{{innerItem.content}}</view>
+            <view>{{innerItem.desc}}</view>
+        </view>
+    </view>
+</view>
+<view class="order-time">
+    <text>{{bookingInfo.order_time.title}}</text>
+    <text>:</text>
+    <text class="time-content">{{bookingInfo.order_time.content}}</text>
+</view>

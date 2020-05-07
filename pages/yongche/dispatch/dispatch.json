@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "driver-state": "/components/driver-state/state",
+        "travel-state": "/components/travel-state/state",
+        "Btn": "/components/button/button",
+        "Travel_cost_detail": "/components/travel_cost_detail/travel_cost_detail"
+      }
+}

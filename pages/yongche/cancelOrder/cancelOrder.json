@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "balance-window":"../../../components/cancelOrder/balance-window/balance-window",
+    "custom-button": "../../../components/button/button",
+    "pay-window": "../../../components/cancelOrder/pay-window/pay-window",
+    "free-window": "../../../components/cancelOrder/free-window/free-window",
+    "start-end": "../../../components/start-end/start-end"
+  }
+}

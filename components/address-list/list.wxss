@@ -1,0 +1,64 @@
+/* components/address-list/list.wxss */
+
+.listContainer {
+  width: 750rpx;
+  /* border-top: 1px solid #E1E1E1; */
+  display: flex;
+  justify-content: space-between;
+  height: 96rpx;
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  align-items: center;
+  background: #ffffff;
+}
+
+.icon {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 8rpx;
+  margin-right: 21rpx;
+}
+.icon_28D79B{
+  background: #28D79B;
+}
+.icon_FF5252{
+  background: #AB956D;
+}
+.icon_888888{
+  background: #888888;
+}
+.leftBox{
+  display: flex;
+  align-items: center;
+}
+.leftCss {
+  font-size: 15px;
+  color: #323232;
+}
+
+.rightCss {
+  text-align: right;
+}
+.rightBox{
+  font-size: 15px;
+  text-align: right;  
+  /* display: inline-block; */
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #E1E1E1;
+}
+.rightActive{
+  color:#323232;
+}
+.largeFont{
+  color:#323232;
+  font-size: 15px;
+}
+.lessFont{
+  color:#323232;
+  font-size: 14px;
+}

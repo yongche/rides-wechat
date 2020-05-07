@@ -1,0 +1,51 @@
+/* pages/yongche/cancelOrder/cancelOrder.wxss */
+
+.view-box{
+    padding: 30rpx 24rpx 0 24rpx;
+}
+.address{
+    margin-bottom: 34rpx;
+}
+.cancel-rule{
+    margin-top: 45rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cancel-rule text{
+    font-size: 13px;
+    color: #0A7DE6;
+    margin-left: 8rpx;
+    vertical-align: bottom;
+}
+.double-button-box{
+    margin-top: 100rpx;
+}
+.cancel-pay-button{
+    background: #AB956D;
+    color: #FFFFFF;
+    border-radius: 8rpx;
+    height: 88rpx;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.not-cancel-button{
+    color: #646464;
+    background-color: #FFFFFF;
+    margin-bottom: 25rpx;
+    border-radius: 8rpx;
+    height: 88rpx;
+    border: 1px solid #C8C8C8;
+    font-size: 17px;
+    font-weight: bold;
+}
+.pay-button{
+    background: #AB956D;
+    border-radius: 8rpx;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 23rpx;
+    width:702rpx;
+    height: 88rpx;
+}

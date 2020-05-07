@@ -1,0 +1,12 @@
+<!--components/address-list/list.wxml-->
+<view class='listContainer' bindtap='click'>
+  <view class="leftBox">
+    <!-- <image src="{{imgSrc}}" class='img'></image> -->
+    <view class="icon icon_{{icon_color}}">
+      
+    </view>
+    <text class='leftCss'>{{leftText}}</text>
+  </view>
+  <view class='rightCss'>
+    <text class='rightBox {{rightActive}}'>{{rightText}}</text></view>
+</view>

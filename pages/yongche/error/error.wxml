@@ -1,0 +1,5 @@
+<!--pages/yongche/error/error.wxml-->
+<view class='errorContain'>
+  <image class='errorImg' src='../../../../images/empty_icon.png'></image>
+  <text class='errorTips'>抱歉，该功能已下线...</text>
+</view>

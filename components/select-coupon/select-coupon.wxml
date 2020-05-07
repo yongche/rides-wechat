@@ -1,0 +1,18 @@
+<view class='use_coupon_container' bindtap="showCouponList">
+    <view class='horizontal_line'></view>
+    <view class='use_coupon_box'>
+        <view class='coupon_logo_box'>
+            <image class='coupon_logo' src="../../images/coupon_logo.png"></image>
+            <text class='coupon_logo_tips'>优惠券</text>
+        </view>
+        <view class='right_box'>
+            <text wx:if="{{status==1}}" class='no_valid_coupon'>暂无可用优惠券</text>
+            <block wx:if="{{status==2}}">
+                <text wx:if="{{orderInfo.order.coupon_type=='3'||orderInfo.order.coupon_type=='31'||orderInfo.order.coupon_type=='32'}}" class='valid_coupon'>已选{{orderInfo.order.coupon_facevalue}}折券</text>
+                <text wx:else class='valid_coupon'>已选{{orderInfo.order.coupon_facevalue}}元券</text>
+            </block>
+            <text wx:if="{{status==3}}" class='valid_coupon'>选择优惠券</text>
+            <image class='arrow_logo' src="../../images/right_arrow.png"></image>
+        </view>
+    </view>
+</view>

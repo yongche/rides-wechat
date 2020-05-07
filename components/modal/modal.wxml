@@ -1,0 +1,3 @@
+<view class="modal" wx:if="{{show}}">
+<slot></slot>
+</view>

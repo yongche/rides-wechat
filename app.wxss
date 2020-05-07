@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "components/toast/toast.wxss";
+@import "weui/style/weui.wxss";
 
 .container {
   box-sizing: border-box;
