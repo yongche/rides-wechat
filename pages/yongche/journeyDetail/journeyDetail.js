@@ -112,7 +112,8 @@ Page({
     })
   },
   phoneCall(event) {
-    const phoneNumber = event.currentTarget.dataset.phoneNum + '';
+    let phoneNumber = event.currentTarget.dataset.phoneNum + '';
+    phoneNumber = '0086' + phoneNumber;
     let numberObj = {
       name: phoneNumber.length > 11 ? formatPhoneNumberS(phoneNumber) : formatPhoneNumber(phoneNumber)
     };
@@ -186,14 +187,14 @@ Page({
           vm.setData({
             travel_status: res.data.status,
             serviceEnd: false, // 是否行程结束
-            showCancelOrder: false, // 是否可以取消订单
+            showCancelOrder: true, // 是否可以取消订单
             driverInfoType: 2
           });
         } else if (res.data.status == _orderStatus.orderStatusDriverArrived) { // 司机已到达
           vm.setData({
             travel_status: res.data.status,
             serviceEnd: false, // 是否行程结束
-            showCancelOrder: false, // 是否可以取消订单
+            showCancelOrder: true, // 是否可以取消订单
             driverInfoType: 2
           });
         } else if (res.data.status == _orderStatus.orderStatusServiceSuc) { // 预订成功

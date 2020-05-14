@@ -369,9 +369,13 @@ Page({
         });
         if (vm.data.estimate != null) {
             const selectedEstimatePrice = vm.getSelectedEstimatePrice();
+            let distance = selectedEstimatePrice.distance;
+            if(distance == 0) {
+                distance = 1;
+            }
             vm.setData({
                 estimate_money: selectedEstimatePrice.total_fee,
-                discountInfo: selectedEstimatePrice.distance + "公里"
+                discountInfo: distance + "公里"
             });
         }
     },
