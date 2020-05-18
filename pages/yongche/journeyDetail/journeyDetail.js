@@ -618,10 +618,13 @@ Page({
         var payAmount = res.data.fee;
         if (payAmount > 0) {
           //支付？
-          let url = '/pages/yongche/cancelOrder/cancelOrder?&orderId='
+          /*let url = '/pages/yongche/cancelOrder/cancelOrder?&orderId='
             + vm.data.orderId + '&productTypeId=' + vm.data.productTypeId + '&fee=' + payAmount;
           wx.navigateTo({
             url: url
+          });*/
+          wx.switchTab({
+            url: '/pages/yongche/order/order'
           });
         } else {
           wx.showToast({
