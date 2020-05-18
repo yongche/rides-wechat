@@ -37,14 +37,14 @@ Page({
       util.request(api.YopGetOrderInfo, params).then(function(res) {
         if (res.errno === 0) {
           let data = res.data.feeSnap;
-          let actualMinute = Math.floor(data.actualTimeLength / 60);
-          const hours = ((Math.floor(actualMinute / 60)).toString())>0 ? (Math.floor(actualMinute / 60)).toString() + '小时' : '';
-          let minutes = ((actualMinute % 60).toString())>0 ? (actualMinute % 60).toString() + '分钟' : '';
+          let actualMinute = Math.ceil(data.actualTimeLength / 60);
+          const hours = ((Math.floor(actualMinute / 60)).toString()) > 0 ? (Math.floor(actualMinute / 60)).toString() + '小时' : '';
+          let minutes = ((actualMinute % 60).toString()) > 0 ? (actualMinute % 60).toString() + '分钟' : '';
           if(actualMinute == 0) {
             minutes = '0分钟'
           };
-          const start_time = res.data.order.startTime*1000; // 开始时间 时间戳
-          const end_time = res.data.order.endTime*1000; // 结束时间 时间戳
+          const start_time = res.data.order.startTime * 1000; // 开始时间 时间戳
+          const end_time = res.data.order.endTime * 1000; // 结束时间 时间戳
           const year = new Date(start_time).getFullYear();
           const month = new Date(start_time).getMonth() + 1;
           const day = new Date(start_time).getDate();

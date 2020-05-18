@@ -5,7 +5,7 @@
         <view class="use_time fontbold">用车时间:</view>
         <view class="use_time_tips_box">
             <text class="use_time fontbold">{{use_car_time}}</text>
-            <text class="use_time_tips">行驶10公里,用时1小时10分钟</text>
+            <text class="use_time_tips">行驶{{result.feeSnap.kiloLength}}公里,用时{{    actual_hours}}{{actual_minutes}}</text>
         </view>
     </view>
     <!-- 列表循环 -->
