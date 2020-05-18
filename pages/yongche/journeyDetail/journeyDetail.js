@@ -498,6 +498,20 @@ Page({
               }
             }
           });
+        } else if(res.data.state == "该订单已经取消") {
+          wx.showModal({
+            title: '',
+            content: res.data.state,
+            cancelText: '不取消',
+            confirmText: '确定取消',
+            success: function (res) {
+              if (res.confirm) {
+                vm.quitRequest();
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          });
         } else {
           wx.showToast({
             title: '订单无法取消',
@@ -596,7 +610,10 @@ Page({
   quitRequest: function () {
     //code, productTypeId, orderId
     let vm = this;
-    util.request(api.YopCancelOrder, params).then(function(res) {
+    let params = {
+      ride_order_id: this.data.orderId
+    };
+    util.request(api.YopCancelOrder, params, "POST").then(function(res) {
       if (res.errno === 0) {
         var payAmount = res.data.fee;
         if (payAmount > 0) {
