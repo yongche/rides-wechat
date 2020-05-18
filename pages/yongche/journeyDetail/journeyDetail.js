@@ -253,7 +253,8 @@ Page({
         let pay_status_tips;
         let amount;
         if (data.order.status == _orderStatus.orderStatusServiceEnd) { // 已经结束
-          if (data.order.totalAmount == 0) {
+          let is_fee_computed = data.order.flag & 0x40000;
+          if (is_fee_computed == 0) {
             //账单确认中
             vm.setData({
               is_fee_computed: 0,

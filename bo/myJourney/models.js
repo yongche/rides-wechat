@@ -207,7 +207,7 @@ var JourneyModels = {
             pageItem.travelState = '行程结束';
             // pageItem.showTopTitle = true;
             // pageItem.dateTime = expect_start_time_MD;
-            var is_fee_computed = 1; // 司机是否确认账单
+            var is_fee_computed = entity.flag & 0x40000; // 司机是否确认账单
             if (!is_fee_computed) { // 司机未确认账单
               pageItem.showBottomTitle = true;
               pageItem.bottomTitle = '账单确认中，请稍候...';
