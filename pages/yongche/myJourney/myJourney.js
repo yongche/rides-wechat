@@ -80,7 +80,10 @@ Page({
     } else {
       url = '/pages/yongche/journeyDetail/journeyDetail?orderId=' + order_id + '&driverId=' + driver_id + '&productTypeId=' + product_type_id + "&orderStatus=" + status;
     }
-    wx.redirectTo({
+    /*wx.redirectTo({
+        url: url
+    });*/
+    wx.navigateTo({
         url: url
     });
   },
@@ -167,12 +170,12 @@ Page({
       this.setData({
         showType: tab
       });
+      this.getOrderList();
     } catch (e) {}
   },
 
   onShow: function() {
     // 页面显示
-    this.getOrderList();
   },
 
   onUnload: function(options) {
