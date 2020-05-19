@@ -184,6 +184,7 @@ Page({
 
   onShow: function() {
     // 页面显示
+    //this.getOrderList();
   },
 
   onUnload: function(options) {
