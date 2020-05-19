@@ -102,8 +102,12 @@ Page({
 
   // 更新当前页数据
   updateData: function (curPageNo, data) {
-    this.setData({
+    /*this.setData({
       rideOrderList: this.data.rideOrderList.concat(data.list),
+      totalPages: data.pages
+    });*/
+    this.setData({
+      rideOrderList: data.list,
       totalPages: data.pages
     });
     let listPage = [];
@@ -114,8 +118,12 @@ Page({
         listPage.push(this.newHistoryPageItem(data.list[i]));
       }
     }
-    this.setData({
+    /*this.setData({
       rideOrderPageList: this.data.rideOrderPageList.concat(listPage),
+      totalPages: data.pages
+    });*/
+    this.setData({
+      rideOrderPageList: listPage,
       totalPages: data.pages
     });
 
