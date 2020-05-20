@@ -230,6 +230,9 @@ Page({
                 if(vm.isNumber(lastCarTypeIndex)) {
                     defaultIndex = lastCarTypeIndex;
                 }
+                if(defaultIndex >= car_type_name.length) {
+                    defaultIndex = 0;
+                }
                 vm.setData({
                     carType: carTypes,
                     carTypeName: car_type_name,
