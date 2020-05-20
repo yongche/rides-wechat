@@ -30,6 +30,7 @@ Page({
         endAddress: '请选择到达位置',
         rightDefault: 'rightDefault',
         bookingCarBtnTips: '去订车',
+        cityShort: 'bj',
         rightActive1: '',
         rightActive2: '',
         carTypeName: [],
@@ -181,6 +182,9 @@ Page({
     },
     initData: function() {
         const cityShort = app.globalData.locationInfo.short;
+        this.setData({
+            cityShort: cityShort
+        });
         if (cityShort != null) {
             // 处理定位获取的地址 看是否需要换行
             let startAddress = this.omitNewLine(app.globalData.locationInfo.formatted_address, 1);
@@ -190,6 +194,15 @@ Page({
             this.initCarTypeByCityShort(cityShort);
         } else {
             this._showToast('定位失败');
+        }
+    },
+    isNumber: function(val) {
+        var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+        var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
+        if(regPos.test(val) || regNeg.test(val)) {
+            return true;
+        } else {
+            return false;
         }
     },
     initCarTypeByCityShort: function(cityShort) {
@@ -212,12 +225,17 @@ Page({
                     }, 1000);
                     return;
                 }
+                let lastCarTypeIndex = wx.getStorageSync('lastCarTypeIndex' + vm.data.cityShort);
+                let defaultIndex = 0;
+                if(vm.isNumber(lastCarTypeIndex)) {
+                    defaultIndex = lastCarTypeIndex;
+                }
                 vm.setData({
                     carType: carTypes,
                     carTypeName: car_type_name,
-                    carTypeItem: car_type_name[0].name,
-                    selectedCarTypeItem: carTypes[0],
-                    carTypeSelectedIndex: 0
+                    carTypeItem: car_type_name[defaultIndex].name,
+                    selectedCarTypeItem: carTypes[defaultIndex],
+                    carTypeSelectedIndex: defaultIndex
                 });
             } else {
                 setTimeout(function() {
@@ -276,6 +294,7 @@ Page({
             startAddressInfo: tempAddress,
             startAddress: this.omitNewLine(address.name, 1),
             startCityShort: cityShort,
+            cityShort: cityShort
         });
         this.initCarTypeByCityShort(cityShort);
         this.estimatePrice();
@@ -361,6 +380,7 @@ Page({
     clickActionSheet(e) {
         const vm = this;
         const index = e.detail.index;
+        wx.setStorageSync('lastCarTypeIndex' + vm.data.cityShort, index);
         vm.setData({
             carTypeItem: vm.data.carTypeName[index].name,
             selectedCarTypeItem: vm.data.carType[index],
